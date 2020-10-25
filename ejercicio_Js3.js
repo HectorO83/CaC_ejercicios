@@ -1,11 +1,10 @@
-document.addEventListener("DOMContentLoaded", function() {
-    var formulario = document.getElementById('form');
-    formulario.addEventListener('submit', validateEmail);
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById('form').addEventListener('submit', validateEmail);
 });
 
 // Email format validation
-function validateEmail(evento) {
-    evento.preventDefault();
+function validateEmail(e) {
+    e.preventDefault();
     let email = document.getElementById("email").value;
     let mailformat1 = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     let mailformat2 = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -21,7 +20,10 @@ function validateEmail(evento) {
             error.innerHTML = '';
             document.getElementById("password").focus();
             let password = document.getElementById("password").value;
-            if (password.length < 6) {
+            if (password === '') {
+                error.innerHTML = 'Introduzca una contraseña con al menos 6 caracteres.';
+                document.getElementById("password").focus();
+            } else if (password.length < 6) {
                 error.innerHTML = 'Ha introducido una contraseña muy corta.';
                 document.getElementById("password").focus();
             } else {
