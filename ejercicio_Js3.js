@@ -16,6 +16,7 @@ function validateEmail(e) {
     } else {
         if (!mailformat1.test(String(email).toLowerCase()) || !mailformat2.test(String(email).toLowerCase())) {
             error.innerHTML = 'Ha introducido un email inválido.';
+            document.getElementById("email").focus();
         } else {
             error.innerHTML = '';
             document.getElementById("password").focus();
