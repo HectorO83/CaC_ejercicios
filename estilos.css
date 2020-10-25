@@ -1,0 +1,15 @@
+.caja {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background: red;
+    color: yellow;
+}
+
+#dos {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    background: black;
+    color: white;
+}
