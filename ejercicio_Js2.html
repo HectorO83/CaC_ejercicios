@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hector Orbegoso - Ejercicio Js2</title>
+</head>
+
+<body>
+
+</body>
+<script language="javascript">
+    for (let num = 11; num > 8; num--) {
+        document.write("<table align='right' style='width:100%'>");
+        document.write("<th><font size='4'><b>La tabla del " + num + ":</font><b></th>");
+        for (a = 1; a < 10; a++) {
+            document.write("<tr><td><center><font size='4'>" + num + ' x ' + a + ': ' + a * num + "</font></td></tr>");
+        }
+        document.write("<tr style='height:10px'><br></table>");
+    }
+</script>
+
+</html>
